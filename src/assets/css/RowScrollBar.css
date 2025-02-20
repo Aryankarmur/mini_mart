@@ -1,0 +1,30 @@
+.rowScrollBar {
+    width: 100vw;
+  height: 100%;
+}
+.rowScrollBar .rowScrollBar_main_container {
+  padding: 2px 0;
+  margin: 5px 0;
+ background-color: white;
+ box-shadow: inset 0 0 10px 0 rgb(151, 150, 150);
+ 
+}
+.rowScrollBar .rowScrollBar_main_container h2 {
+  margin: 0 0 5px 10px;
+}
+.rowScrollBar .rowScrollBar__container {
+  width: 100vw;
+  height: 200px;
+  display: flex;
+  align-items: start;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.rowScrollBar .rowScrollBar__container img {
+  height: 190px;
+  margin: 0 5px;
+  border-radius: 12px;
+}

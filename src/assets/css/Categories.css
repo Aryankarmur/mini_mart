@@ -1,6 +1,10 @@
 .categories-container {
   margin-top: 6px;
 }
+.categories-container h2 {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
 .categories {
   margin: 20px 0;
   display: grid;
@@ -11,6 +15,6 @@
 }
 .categories img {
   width: 75%;
-  border-radius: 15%;
+  border-radius: 50%;
   cursor: pointer;
 }

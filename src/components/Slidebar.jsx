@@ -3,12 +3,20 @@ import "../assets/css/Slider.css";
 const Slidebar = () => {
   return (
     <div>
-      <figure className="slidebar">
+      <div className="slidebar">
+        <div>
               <img src="src\assets\images\miniflowers.jpg" alt="Slidebar" />
+        </div>
+        <div>
               <img src="src\assets\images\miniflowers.jpg" alt="Slidebar" />
+        </div>
+        <div>
               <img src="src\assets\images\miniflowers.jpg" alt="Slidebar" />
+        </div>
+        <div>
               <img src="src\assets\images\miniflowers.jpg" alt="Slidebar" />
-      </figure>
+        </div>
+      </div>
     </div>
   )
 }

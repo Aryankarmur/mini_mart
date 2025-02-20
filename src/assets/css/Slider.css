@@ -1,14 +1,15 @@
 .slidebar{
     margin: 20px auto;
-    width: 90%;
+    width: 90vw;
+    height: 250px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
     gap: 20px;
     overflow: scroll;
 }
 .slidebar img{
-    height: 300px;
-    border-radius: 2%;
+    height: 250px;
+    width:100vw;
     cursor: pointer;
 }
