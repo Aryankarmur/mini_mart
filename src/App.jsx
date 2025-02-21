@@ -1,14 +1,18 @@
 import Home from "./Home"
 
-
+import Footer from "./components/Footer"
+// import PrdctDetailes from "./components/item detailes component/PrdctDetailes"
+import Navbar from "./components/Navbar"
 
 function App() {
  
 
   return (
     <>
-      <Home />
-      
+      <Navbar />
+      <Home />  
+      {/* <PrdctDetailes /> */}
+      <Footer />
     </>
   )
 }

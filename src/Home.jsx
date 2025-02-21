@@ -1,17 +1,15 @@
 import Categories from "./components/Categories"
-import GridImage from "./components/GridImage"
-import HomeProduct from "./components/HomeProduct"
-import Navbar from "./components/Navbar"
+import ReapetState from "./components/ReapetState"
 import Slidebar from "./components/Slidebar"
 
 const Home = () => {
   return (
     <div>
-      <Navbar />    
       <Categories /> 
       <Slidebar />
-      <HomeProduct />
-      <GridImage/>
+      <ReapetState />
+      <ReapetState />
+      <ReapetState />
     </div>
   )
 }

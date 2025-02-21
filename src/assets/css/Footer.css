@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+}
+.footer{
+    padding: 20px 0;
+    background-color:#000;
+    color: #fff;
+    line-height: 20px;
+}
+.footer .subfooter{
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.footer .subfooter h3{
+    padding-bottom: 10px;
+    font-size: 15px;
+    color: #bdbaba;
+}
+.footer .subfooter h4{
+    padding-bottom: 10px;
+    font-size: 15px;
+    color: #bdbaba;
+}
+.footer .subfooter .addres-register{
+    width: 300px;
+}
+.footer .subfooter .social-div{
+    margin-top: 10px;  
+}
+.footer .subfooter .social-div div{
+    display: flex;
+    gap: 10px;
+}
