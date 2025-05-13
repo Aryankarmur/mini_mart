@@ -1,0 +1,47 @@
+
+
+.main-cart-card {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  border: 1.5px solid black;
+  border-radius: 7px;
+  padding: 20px;
+}
+.main-cart-card:hover{
+    border: 1.5px solid rgb(158, 155, 155);
+    box-shadow:  2px 3px 10px 2px  rgb(132, 130, 130);
+}
+.main-cart-card .prdct-img{
+    width: 200px;
+} 
+.main-cart-card .prdct-img img{
+    width: 100%;
+}
+.main-cart-card .prdct-detaile {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.main-cart-card .prdct-detaile .incri-decri button{
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+}
+.main-cart-card .prdct-detaile .incri-decri .decrement{
+    border-radius: 5px 0 0 5px;
+    
+}
+.main-cart-card .prdct-detaile .incri-decri .increment{
+    border-radius: 0 5px  5px 0 ;
+
+}
+.main-cart-card .prdct-detaile .incri-decri input{
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-top: 1px  solid black;
+    border-bottom: 1px  solid black;
+    text-align: center;
+    
+}

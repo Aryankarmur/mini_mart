@@ -1,8 +1,11 @@
 import Home from "./Home"
-
+import Cart from "./components/Cart"
 import Footer from "./components/Footer"
-// import PrdctDetailes from "./components/item detailes component/PrdctDetailes"
+import PrdctDetailes from "./components/item detailes component/PrdctDetailes"
 import Navbar from "./components/Navbar"
+import Profile from "./components/Profile"
+import PaymentDetailes from "./components/PaymentDetailes"
+import UserAddress from "./components/UserAddress"
 
 function App() {
  
@@ -11,7 +14,11 @@ function App() {
     <>
       <Navbar />
       <Home />  
-      {/* <PrdctDetailes /> */}
+      <PrdctDetailes />
+      <UserAddress />
+      <PaymentDetailes />
+      <Cart />
+      <Profile/>
       <Footer />
     </>
   )

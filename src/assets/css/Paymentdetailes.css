@@ -1,0 +1,109 @@
+.payment-detailes{
+    padding: 10px;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c4c4c475;
+}
+.payment-detailes h2{
+    margin-top: 16px;
+}
+.payment-detailes .payment-method{
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ffffff81;
+}
+.payment-detailes .payment-method .payment-method-div select{
+    margin: 6px 0;
+    padding: 6px;
+    width: 300px;
+}
+
+            
+/* debit card css || credit card css*/
+.payment-detailes .payment-method .debit-card-main{
+background-color: #efefefd4 ;
+margin: 2px;
+padding: 10px;
+border: 1.5px solid #ffffff81;
+border-radius: 5px;
+line-height: 30px;
+}
+.payment-detailes .payment-method .debit-card-main input{
+    height: 40px;
+    padding: 0 7px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.payment-detailes .payment-method .debit-card-main .own-cvv{
+   display: flex;
+   justify-content: space-between;
+}
+.payment-detailes .payment-method .debit-card-main .own-cvv .owner{
+    width: 240px;
+}
+.payment-detailes .payment-method .debit-card-main .own-cvv .credit-owner{
+    width: 100%;
+}
+.payment-detailes .payment-method .debit-card-main .own-cvv div{
+    display: flex;
+    flex-direction: column;
+}
+.payment-detailes .payment-method .debit-card-main .db-num{
+    padding: 5px 0 ;
+    display: flex;
+    flex-direction: column;
+}
+.payment-detailes .payment-method .debit-card-main .exp-img{
+    padding-top: 3px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    
+}
+.payment-detailes .payment-method .debit-card-main .exp-img .exp-date{
+    display: flex;
+    flex-direction: column;
+
+}
+.payment-detailes .payment-method .debit-card-main .exp-img .card-img{
+    width: 250px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 7px;
+}
+
+
+/* upi form css */
+
+.payment-detailes .main-upi{
+    padding: 20px;
+    background-color:#ffffff81;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 30px;
+}
+.payment-detailes .main-upi input{
+    height: 40px;
+    padding: 0  7px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.payment-detailes .payment-btn{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.payment-detailes .payment-btn button{
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: bisque;
+
+}

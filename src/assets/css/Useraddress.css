@@ -1,0 +1,62 @@
+.userdetailes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0;
+    background-color: #f5f5f5;
+}
+.userdetailes .detaile-main{
+    padding: 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+.userdetailes h1{
+    font-size: 30px;
+    color: #333;
+    margin: 10px 0;
+}
+.userdetailes .addressdetailes{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0;
+    /* background-color: black; */
+}
+.userdetailes .addressdetailes input{
+    width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #45444441;
+    border-radius: 5px;
+}
+.userdetailes .addressdetailes textarea{
+    width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.userdetailes .btns{
+    display: flex;
+    gap: 30px;
+}
+.userdetailes .btns .update{
+    padding: 10px 20px;
+    background-color: #d62828d9;
+    color: #242323fd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.userdetailes .btns .proceed{
+    padding: 10px 20px;
+    background-color: rgb(242, 201, 37);
+    color: rgba(0, 0, 0, 0.9);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

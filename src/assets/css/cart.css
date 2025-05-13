@@ -1,0 +1,14 @@
+.cart-div{
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.cart-div .main-total{
+    width: 790px;
+   text-align: end;
+   margin-bottom: 2rem;
+   font-size: large;
+}
