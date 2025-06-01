@@ -1,0 +1,121 @@
+.footer_main-div{
+    background-color: #222831;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.footer_main-div a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* ====== Start footer content part ====== */
+    
+    
+
+.footer_main-div .footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.footer_main-div .footer-content .footer-logo a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.footer_main-div .footer-content .footer-logo .logo-img{
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.footer_main-div .footer-content .footer-logo .logo-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.footer_main-div .footer-content .footer-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+.footer_main-div .footer-content .connection-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: large;
+}
+
+/* ====== End footer content part ====== */
+
+/* ====== Start footer bottom part ====== */
+.footer_main-div .footer-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+}
+.footer_main-div .footer-bottom .devloper-detail{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+.footer_main-div .footer-bottom .devloper-detail p{
+    font-size: 20px;
+    color: #7b7b7b;
+}
+.footer_main-div .footer-bottom .devloper-detail .developer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.footer_main-div .footer-bottom .developer-img{
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.footer_main-div .footer-bottom .developer-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    rotate: 36deg;
+}
+.footer_main-div .footer-bottom .devloper-detail .developer .dev-pation{
+    font-size: 16px;
+    color: #6a6969e6;
+}
+.footer_main-div .footer-bottom .devloper-detail .developer .dev-name{
+    letter-spacing: 1.4px;
+    font-size: 20px;
+    color: #ffffff;
+}
+.footer_main-div .footer-bottom .rights_p{
+    width: 100%;
+    font-size: 18px;
+    color: #7b7b7b;
+}
+/* ====== End footer bottom part ====== */
+
+@media (max-width: 768px){
+    .footer_main-div .footer-content{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer_main-div .footer-content .footer-links{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer_main-div .footer-bottom{
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+}

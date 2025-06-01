@@ -1,0 +1,63 @@
+.main_product_div{
+    padding: 10px;
+    display: flex;
+}
+.main_product_div .productImage{
+    width: 50%;
+    min-width: 20rem;
+    height: 30rem;
+}
+.main_product_div .productImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.main_product_div .product_detailes{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.main_product_div .product_detailes .productTitle{
+    font-size: 2rem;
+}
+.main_product_div .product_detailes span{
+    font-size: 1.2rem;
+}
+.main_product_div .product_detailes .buttons {
+    display: flex;
+    gap: 1rem;
+}
+.main_product_div .product_detailes .buttons button{
+    padding: 0.5rem 1rem;
+    width: 10rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ffae00;
+    color: #2887a7;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.main_product_div .product_detailes .buttons button:hover{
+    border: 1.4px solid black;
+    border-radius: 5px;
+}
+.main_product_div .product_detailes .descrip{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ====== Start responsiv code ====== */
+    @media (max-width:560px) {
+        .main_product_div{
+            flex-direction: column;
+            align-items: center;
+        }
+        .main_product_div .productImage{
+            width: 15rem;
+            height: 20rem;
+        }
+    }
+/* ====== End responsiv code ====== */

@@ -1,0 +1,107 @@
+import { useEffect, useState } from "react";
+import "../css/Categories.css";
+// import category images
+import beauty from "/src/assets/images/categories image/beauty.jpg";
+import Fragrances from "/src/assets/images/categories image/Fragrances.png";
+import Furniture from "/src/assets/images/categories image/Furniture.png";
+import Groceries from "/src/assets/images/categories image/Groceries.jpg";
+import Home_Decoration from "/src/assets/images/categories image/Home Decoration.jpg";
+import Kitchen_Accessories from "/src/assets/images/categories image/kitchen_accessories.jpg";
+import Laptops from "/src/assets/images/categories image/Laptops.jpg";
+import Mens_Shirts from "/src/assets/images/categories image/Mens Shirts.png";
+import Mens_Shoes from "/src/assets/images/categories image/Mens Shoes.png";
+import Mens_Watches from "/src/assets/images/categories image/Mens Watches.png";
+import Mobile_Accessories from "/src/assets/images/categories image/Mobile Accessories.jpeg";
+import Motorcycle from "/src/assets/images/categories image/Motorcycle.jpg";
+import Skin_Care from "/src/assets/images/categories image/Skin Care.png";
+import Smartphones from "/src/assets/images/categories image/Smartphones.png";
+import Sports_Accessories from "/src/assets/images/categories image/Sports Accessories.jpg";
+import Sunglasses from "/src/assets/images/categories image/Sunglasses.png";
+import Tablets from "/src/assets/images/categories image/Tablets.png";
+import Tops from "/src/assets/images/categories image/Tops.png";
+import Vehicle from "/src/assets/images/categories image/Vehicle.png";
+import Womens_Bags from "/src/assets/images/categories image/Womens Bags.png";
+import Womens_Dresses from "/src/assets/images/categories image/Womens Dresses.png";
+import Womens_Jewellery from "/src/assets/images/categories image/Womens Jewellery.jpg";
+import Womens‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌_Shoes from "/src/assets/images/categories image/Womens Shoes.png";
+import Womens_Watches from "/src/assets/images/categories image/Womens Watches.jpg";
+import { Link } from "react-router-dom";
+
+const Categories = () => {
+  const [category, setCategory] = useState([]);
+  // category images array
+  const imgPath = [
+    beauty,
+    Fragrances,
+    Furniture,
+    Groceries,
+    Home_Decoration,
+    Kitchen_Accessories,
+    Laptops,
+    Mens_Shirts,
+    Mens_Shoes,
+    Mens_Watches,
+    Mobile_Accessories,
+    Motorcycle,
+    Skin_Care,
+    Smartphones,
+    Sports_Accessories,
+    Sunglasses,
+    Tablets,
+    Tops,
+    Vehicle,
+    Womens_Bags,
+    Womens_Dresses,
+    Womens_Jewellery,
+    Womens‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌_Shoes,
+    Womens_Watches,
+  ];
+
+  // Fetch categories from the API
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const res = await fetch("https://dummyjson.com/products/categories");
+      const data = await res.json();
+      const catArray = data.map((category, index) => ({
+        ...category,
+        img: imgPath[index],
+      }));
+      setCategory(catArray);
+    };
+    fetchCategories();
+  }, []);
+
+
+  // category classification
+  const categoryList = category.map((category) => {
+    return (
+      <li key={category.name}>
+          <Link to={`Categorie_search/${category.slug}`} className="under">
+          <div>
+            <figure>
+              <div className="cat_images">
+                <img
+                  src={category.img}
+                  alt={category.name}
+                  width={200}
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>
+                <span>{category.name}</span>
+              </figcaption>
+            </figure>
+          </div>
+      </Link>
+        </li>
+    );
+  });
+
+  return (
+    <>
+      <ul className="categories">{categoryList}</ul>
+    </>
+  );
+};
+
+export default Categories;

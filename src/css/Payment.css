@@ -1,0 +1,94 @@
+.payment-main{
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.payment-main .pay-div{
+    padding: 10px 15px;
+    display: grid;
+    gap: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 1px rgb(205, 205, 205);
+}
+.payment-main .pay-div label{
+    font-size: 1.1rem;
+}
+.payment-main .pay-div select{
+    font-size: 1rem;
+    width: 15rem;
+    padding: 3px;
+}
+
+
+.method-main{
+    width: 30rem;
+padding: 10px;
+border: none;
+border-radius: 4px;
+background-color: #fff;
+box-shadow: 0 0 2px 1px #c3c3c3;
+display: grid;
+/* place-items: center; */
+gap: 10px;
+grid-template-columns: 65% 30%;
+}
+.method-main  label{
+width: 100%;
+}
+.method-main  input{
+width: 100%;
+padding: 5px;
+border: 1px solid black;
+border-radius: 4px;
+}
+
+.method-main #number{
+    width: 150%;
+}
+.method-main #month{
+    width: 80%;
+}
+.method-main .img-div{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 10px;
+}
+.img-div img{
+    width: 35%;
+    object-fit: contain;
+}
+.payment-main form {
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+}
+.payment-main form button{
+    margin: 20px 0;
+    width: 17rem;
+    padding: 8px 3px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffae00;
+    font-size: large;
+    color: #4f4f4f;
+    cursor: pointer;
+}
+.payment-main .empty{
+    height: 18rem;
+    /* width: 30rem; */
+    text-align: center;
+}
+/* ====== Start responsiv part ====== */
+    @media (max-width:540px) {
+        .payment-main .pay-div{
+            width: 22rem;
+        }
+        .method-main{
+            width: 20rem;
+        }
+    }
+    
+/* ====== End responsiv part ====== */
