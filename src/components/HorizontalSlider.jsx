@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchProductByMultyCatagory } from "../components/FetchItem.js";
-import "../css/HorizontalSlider.css";
+import { fetchProductByMultyCatagory } from "./FetchItem.js";
+import "../css/Horizontalslider.css";
 import { Link } from "react-router-dom";
 
 const HorizontalSlider = ({header,categories}) => {

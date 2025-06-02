@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchProductByMultyCatagory } from "../components/FetchItem.js";
-import "../css/GridviewProductList.css";
+import { fetchProductByMultyCatagory } from "./FetchItem.js";
+import "../css/Gridviewproductlist.css";
 import { Link } from "react-router-dom";
 
 const GridviewProductList = ({ categories, header }) => {
@@ -37,7 +37,11 @@ const GridviewProductList = ({ categories, header }) => {
   // apply map function to the filtered products
   const productsCard = randomFilterdProduct.map((product, index) => {
     return (
-      <Link to={`/Product_details/${product.id}`} key={product.id} className={`card${index}`} >
+      <Link
+        to={`/Product_details/${product.id}`}
+        key={product.id}
+        className={`card${index}`}
+      >
         <div className="productImage">
           <img src={product.images[0]} alt={product.title} loading="lazy" />
         </div>
@@ -48,7 +52,7 @@ const GridviewProductList = ({ categories, header }) => {
   });
   return (
     <div className="gridviewProductList">
-        <h2>{header}</h2>
+      <h2>{header}</h2>
       <div className="gridviewProductList__products">{productsCard}</div>
     </div>
   );
