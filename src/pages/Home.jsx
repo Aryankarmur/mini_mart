@@ -1,6 +1,6 @@
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
-import GridviewProductList from "../components/Gridviewproductlist";
+import GridviewproductList from "../components/Gridviewproductlist";
 import Horizontalslider from "../components/HorizontalSlider";
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
           header="Beauty, Fragrances & Skin care"
           categories={["beauty", "fragrances", "skin-care"]}
         />
-        <GridviewProductList
+        <GridviewproductList
           header="Electronics"
           categories={["laptops", "mobile-accessories", "smartphones", "tablets"]}
         />
@@ -23,7 +23,7 @@ const Home = () => {
           header="Women's wear & accessories"
           categories={["womens-dresses", "womens-shoes", "tops", "womens-bags", "womens-jewellery", "womens-watches"]}
         />
-        <GridviewProductList
+        <GridviewproductList
           header="Men's wear & accessories"
           categories={["mens-shirts", "mens-shoes", "mens-watches"]}
         />
@@ -31,7 +31,7 @@ const Home = () => {
           header="Groceries, Kitchen & Home appliances"
           categories={["groceries", "home-decoration", "kitchen-accessories", "furniture"]}
         />
-        <GridviewProductList
+        <GridviewproductList
           header="Other products"
           categories={["sports-accessories", "motorcycle", "sunglasses", "vehicle"]}
         />
