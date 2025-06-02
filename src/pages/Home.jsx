@@ -1,7 +1,7 @@
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
-import GridviewproductList from "../components/Gridviewproductlist";
-import Horizontalslider from "../components/Horizontalslider";
+import GridviewproductList from "../components/GridviewProductlist";
+import Horizontalslider from "../components/HorizontalSlider";
 
 const Home = () => {
   
