@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchProductByMultyCatagory } from "./FetchItem";
 import { Link } from "react-router-dom";
-import "../css/Similarproduct.css";
+import "../css/SimilarProduct.css";
 
 const Similarproduct = (props) => {
   const [productsByCat, setproductsByCat] = useState([]);
