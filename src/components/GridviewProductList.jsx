@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchProductByMultyCatagory } from "./FetchItem.js";
-import "../css/GridviewProductList.css";
+import "../css/GridViewProductList.css";
 import { Link } from "react-router-dom";
 
 const GridviewproductList = ({ categories, header }) => {
