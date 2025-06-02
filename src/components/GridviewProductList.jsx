@@ -3,7 +3,7 @@ import { fetchProductByMultyCatagory } from "./FetchItem.js";
 import "../css/Gridviewproductlist.css";
 import { Link } from "react-router-dom";
 
-const GridviewProductList = ({ categories, header }) => {
+const GridviewproductList = ({ categories, header }) => {
   const [productsByCatagory, setproductsByCatagory] = useState([]);
 
   // get fetch products by category from fetch.js
@@ -58,4 +58,4 @@ const GridviewProductList = ({ categories, header }) => {
   );
 };
 
-export default GridviewProductList;
+export default GridviewproductList;

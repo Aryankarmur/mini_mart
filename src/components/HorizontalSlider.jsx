@@ -3,7 +3,7 @@ import { fetchProductByMultyCatagory } from "./FetchItem.js";
 import "../css/Horizontalslider.css";
 import { Link } from "react-router-dom";
 
-const HorizontalSlider = ({header,categories}) => {
+const Horizontalslider = ({header,categories}) => {
   const [productsByCatagory, setproductsByCatagory] = useState([]);
 
 
@@ -56,4 +56,4 @@ const HorizontalSlider = ({header,categories}) => {
   );
 };
 
-export default HorizontalSlider;
+export default Horizontalslider;

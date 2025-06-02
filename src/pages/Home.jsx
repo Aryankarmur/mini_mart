@@ -1,7 +1,7 @@
 import Banner from "../components/Banner";
 import Categories from "../components/Categories";
-import GridviewProductList from "../components/GridviewProductList";
-import HorizontalSlider from "../components/HorizontalSlider";
+import GridviewProductList from "../components/Gridviewproductlist";
+import Horizontalslider from "../components/HorizontalSlider";
 
 const Home = () => {
   
@@ -19,7 +19,7 @@ const Home = () => {
           header="Electronics"
           categories={["laptops", "mobile-accessories", "smartphones", "tablets"]}
         />
-        <HorizontalSlider
+        <Horizontalslider
           header="Women's wear & accessories"
           categories={["womens-dresses", "womens-shoes", "tops", "womens-bags", "womens-jewellery", "womens-watches"]}
         />
