@@ -27,7 +27,7 @@
 }
 .order_main .img_div img{
     width: 100%;
-    height: 90%;
+    height: 100%;
     object-fit: contain;
 }
 /* ====== Start responsiv part ====== */
