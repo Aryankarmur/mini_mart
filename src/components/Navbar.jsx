@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import logo from "../assets/images/logo.jpg";
 import "../css/Navbar.css";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 import { fetchProducts } from "./FetchItem";
 
 const Navbar = () => {
@@ -40,7 +40,8 @@ const Navbar = () => {
 
   const handelsearch = (e) => {
     e.preventDefault();
-    window.location.href = `/Search/${query.toLowerCase()}`;
+    // window.location.href = `/Search/${query.toLowerCase()}`;
+    <Link to={query.trim() === ""?"/":`/Search/${query.toLocaleLowerCase()}`} />
   };
 
 
@@ -86,11 +87,11 @@ const Navbar = () => {
             required
           />
           
-          {/* <Link to={query.trim() === ""?"/":`/Search/${query.toLocaleLowerCase()}`}> */}
+          <Link to={query.trim() === ""?"/":`/Search/${query.toLocaleLowerCase()}`}> 
           <button type="submit">
             <IoSearch />
           </button>
-        {/* </Link> */}
+         </Link>
           
 
           <ul onClick={handelsearchsuggestion} className={`suggetionList ${query.trim()===""?"hide":"show"} `}>
@@ -132,11 +133,11 @@ const Navbar = () => {
             required
           />
           
-          {/* <Link to={query.trim() === ""?"/":`/Search/${query.toLocaleLowerCase()}`}> */}
+          <Link to={query.trim() === ""?"/":`/Search/${query.toLocaleLowerCase()}`}>
           <button type="submit">
             <IoSearch />
           </button>
-        {/* </Link> */}
+        </Link>
           
 
           <ul onClick={handelsearchsuggestion} className={`suggetionList ${query.trim()===""?"hide":"show"} `}>
