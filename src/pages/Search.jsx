@@ -17,15 +17,16 @@ const Search = () => {
   }, [params.query]);
 
   const Searchedproduct = Allproducts.filter((product) =>
-    product.title.toLowerCase().includes(params.query)
-  );
+    product.tags.includes(params.query)
+);
+
   
   const displaySearch = () => {
+    
   if ((params.query).trim() === "") {
     alert("Please enter Somthin in search box!");
     window.location.href = "/";
   } else {
-    
       
       return (Searchedproduct.map((product) => {
         return (

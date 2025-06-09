@@ -4,13 +4,26 @@ import { IoMenu } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import logo from "../assets/images/logo.jpg";
 import "../css/Navbar.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { fetchProducts } from "./FetchItem";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [query, setQuery] = useState("");
   const list = useRef(null);
+
+  const [Allproducts, setAllproducts] = useState([]);
+
+
+  // get fetch products by category from fetch.js
+  useEffect(() => {
+    const fetchsearchedproduct = async () => {
+      const getProductById = await fetchProducts();
+      setAllproducts(getProductById);
+    };
+    fetchsearchedproduct();
+  }, [query]);
 
   const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
@@ -27,27 +40,33 @@ const Navbar = () => {
 
   const handelsearch = (e) => {
     e.preventDefault();
-    setQuery(null);
+    window.location.href = `/Search/${query.toLowerCase()}`;
   };
-  const displaySearchbtn = () => {
-    if (query.trim() === "") {
-      return (
-        <Link to={"/"}>
-          <button type="submit">
-            <IoSearch />
-          </button>
-        </Link>
+
+
+  
+  const displaySuggetion = () => {
+      if (query.trim() !== "") {
+        const Searchedproduct = Allproducts.filter((product) =>
+          product.title.toLowerCase().includes(query) || product.tags.includes(query)
       );
-    } else {
-      return (
-        <Link to={`/Search/${query}`}>
-          <button type="submit">
-            <IoSearch />
-          </button>
-        </Link>
-      );
+      const suggetion = Searchedproduct.map(product => {
+        return (
+          <li key={product.id}> {product.tags[1] || product.title} </li>
+        )
+      })
+        
+      if (query) {
+        return suggetion;
+      } 
     }
-  };
+  }
+
+
+  const handelsearchsuggestion = (e) => {
+    setQuery(e.target.innerText);    
+  }
+
   return (
     <nav>
       <div className="logo-div">
@@ -66,9 +85,20 @@ const Navbar = () => {
             onChange={(e) => setQuery(e.target.value)}
             required
           />
-          {displaySearchbtn()}
+          
+          {/* <Link to={query.trim() === ""?"/":`/Search/${query.toLocaleLowerCase()}`}> */}
+          <button type="submit">
+            <IoSearch />
+          </button>
+        {/* </Link> */}
+          
+
+          <ul onClick={handelsearchsuggestion} className={`suggetionList ${query.trim()===""?"hide":"show"} `}>
+            {displaySuggetion()}
+          </ul>
         </form>
       </div>
+  
       <div className="login_profile-cart">
         <Link to={loggedInUser ? "/Profile" : "/Login"}>
           <button className="login-btn">
@@ -92,18 +122,34 @@ const Navbar = () => {
         </button>
         <ul className="menu-list hide" ref={list}>
           <li>
-            <form onSubmit={handelsearch}>
-              <input
-                type="search"
-                name="search"
-                value={query}
-                placeholder="Search Products"
-                onChange={(e) => setQuery(e.target.value)}
-                required
-              />
-              {displaySearchbtn()}
-            </form>
+             <form onSubmit={handelsearch}>
+          <input
+            type="search"
+            name="search"
+            value={query}
+            placeholder="Search Products"
+            onChange={(e) => setQuery(e.target.value)}
+            required
+          />
+          
+          {/* <Link to={query.trim() === ""?"/":`/Search/${query.toLocaleLowerCase()}`}> */}
+          <button type="submit">
+            <IoSearch />
+          </button>
+        {/* </Link> */}
+          
+
+          <ul onClick={handelsearchsuggestion} className={`suggetionList ${query.trim()===""?"hide":"show"} `}>
+            {displaySuggetion()}
+          </ul>
+        </form>
           </li>
+          <Link to="/About" className="login-btn">
+            <li>About</li>
+          </Link>
+          <Link to="/Contact" className="login-btn">
+            <li>Contact</li>
+          </Link>
           <Link to={loggedInUser ? "/Profile" : "/Login"} className="login-btn">
             <li>{loggedInUser ? "Profile" : "Login"}</li>
           </Link>

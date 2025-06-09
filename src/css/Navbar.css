@@ -31,7 +31,24 @@ nav .search-bar form{
   display: flex;
   align-items: center;
   gap: 0.2rem;
+  position: relative;
 }
+nav .search-bar form .suggetionList{
+  max-height: 20rem;
+justify-content: start; 
+ flex-direction: column;
+ gap: 10px;
+ list-style: none;
+  padding: 20px 50px;
+  position: absolute;
+  top: 40px;
+  z-index: 10000;
+  background-color: #ffffffcf;
+  color: #0f6fff;
+  border-radius: 4px;
+  overflow: scroll;
+}
+
 nav .search-bar input {
   padding: 0.5rem;
   border: 1px solid #393e46ad;
@@ -72,6 +89,7 @@ nav .resp-part {
   display: none;
   align-items: center;
   justify-content: center;
+  transition: all 0.10s ease;
 }
 nav .menu-list {
   padding: 3rem 0;
@@ -87,6 +105,7 @@ nav .menu-list {
   right: 0;
   background-color: #2a475971;
 }
+
 nav .hide{
     display: none;
 }
@@ -101,6 +120,7 @@ nav .menu-list form{
   align-items: center;
   justify-content: space-around;
   gap: 10px;
+  position: relative;
 }
 nav .menu-list form input{
   /* width: 10rem; */
@@ -128,6 +148,21 @@ nav .menu-list  li {
   border-radius: 0.5rem;
   color: #2a4759;
   background-color: #fff;
+}
+nav .menu-list  li ul{
+   max-height: 20rem;
+justify-content: start; 
+ flex-direction: column;
+ gap: 10px;
+ list-style: none;
+  padding: 10px 20px;
+  position: absolute;
+  top: 40px;
+  z-index: 10000;
+  background-color: #ffffffe0;
+  color: #0f6fff;
+  border-radius: 4px;
+  overflow: scroll;
 }
 
 @media screen and (max-width: 768px) {
