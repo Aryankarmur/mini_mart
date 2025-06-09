@@ -5,7 +5,7 @@ const Orders = () => {
     // user detailes
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
   //order detailes
-  const orders = JSON.parse(localStorage.getItem("orderDetail"));
+  const orders = JSON.parse(localStorage.getItem("orderDetail"))||[];
 
   // filter orders
   const usersOrder = orders.filter((item) => item.username === user.username);
@@ -29,8 +29,17 @@ const Orders = () => {
   
   return (
     <section className="order-sec">
-      <h2>Your orders </h2>
-      {orderDetailes}
+
+      {orders.length > 0 ? (
+        <>
+        <h2>Your orders </h2>
+        {orderDetailes}
+        </>
+      ):(
+      "no orders found"
+      )
+      
+      }
     </section>
   )
 }

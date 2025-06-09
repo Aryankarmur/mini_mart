@@ -8,10 +8,10 @@ const Payment = () => {
   const navigate = useNavigate();
 
   // user detailes
-  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  const user = JSON.parse(localStorage.getItem("loggedInUser"))||[];
 
   // cart products
-  const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+  const cartItems = JSON.parse(localStorage.getItem("cartItems"))||[];
 
   // filter products from cartitems
   const usersProductList = cartItems.filter(
