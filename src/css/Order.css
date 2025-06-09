@@ -35,6 +35,7 @@
         .order_main{
             width: 16rem;
             padding: 10px;
+            height: 10rem;
         }
         .order_main .img_div{
             width: 50%;
