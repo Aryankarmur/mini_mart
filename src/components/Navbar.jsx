@@ -40,8 +40,9 @@ const Navbar = () => {
 
   const handelsearch = (e) => {
     e.preventDefault();
-    // window.location.href = `/Search/${query.toLowerCase()}`;
-    <Link to={query.trim() === ""?"/":`/Search/${query.toLocaleLowerCase()}`} />
+    <Link to={query.trim() === "" ? "/" : `/Search/${query.toLocaleLowerCase()}`} />
+    setQuery("");
+    
   };
 
 
@@ -51,9 +52,12 @@ const Navbar = () => {
         const Searchedproduct = Allproducts.filter((product) =>
           product.title.toLowerCase().includes(query) || product.tags.includes(query)
       );
-      const suggetion = Searchedproduct.map(product => {
+      const suggetion = Searchedproduct.map((product, index) => {
         return (
+          <>
           <li key={product.id}> {product.tags[1] || product.title} </li>
+          <li key={index}> { product.title} </li>
+          </>
         )
       })
         

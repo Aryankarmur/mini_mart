@@ -16,9 +16,8 @@ const Search = () => {
     fetchsearchedproduct();
   }, [params.query]);
 
-  const Searchedproduct = Allproducts.filter((product) =>
-    product.tags.includes(params.query)
-);
+
+  const Searchedproduct = Allproducts.filter((product) => (product.title.toLowerCase()).includes(params.query));
 
   
   const displaySearch = () => {
