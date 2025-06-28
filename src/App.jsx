@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-import Home from "./Home"
-import Cart from "./components/Cart"
-import Footer from "./components/Footer"
-import PrdctDetailes from "./components/item detailes component/PrdctDetailes"
-import Navbar from "./components/Navbar"
-import Profile from "./components/Profile"
-import PaymentDetailes from "./components/PaymentDetailes"
-import UserAddress from "./components/UserAddress"
-
-function App() {
- 
-
-  return (
-    <>
-      <Navbar />
-      <Home />  
-      <PrdctDetailes />
-      <UserAddress />
-      <PaymentDetailes />
-      <Cart />
-      <Profile/>
-      <Footer />
-    </>
-  )
-}
-
-export default App
-=======
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
@@ -77,4 +48,3 @@ function App() {
 }
 
 export default App;
->>>>>>> a6c1ffcf728e3ad77688f1544bdde548c184c40b
