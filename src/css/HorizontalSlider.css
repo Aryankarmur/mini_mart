@@ -1,0 +1,125 @@
+.horizontalSlider{
+    /* display: flex; */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+.horizontalSlider h1{
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.horizontalSlider .productCard{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    gap: 10px;
+    overflow: scroll;
+}::-webkit-scrollbar{
+    display: none;
+}
+.horizontalSlider .productCard a{
+    text-decoration: none;
+    display: grid;
+    text-align: center;
+    flex-shrink: 0;
+    width: 200px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.horizontalSlider .productCard a:hover{
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+.horizontalSlider .productCard .productImage{
+    width: 100%;
+    height: 150px;
+}
+.horizontalSlider .productCard .productImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.horizontalSlider .productCard .productTitle{
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+.horizontalSlider .productCard .productPrice{
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    padding-bottom: 3px;
+}
+
+
+/* media queries */
+@media (max-width: 768px) and (min-width: 481px) {
+    .horizontalSlider h1{
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+    .horizontalSlider .productCard a{
+        width: 170px;
+        height: 215px;
+        gap: 2px;
+    }
+    .horizontalSlider .productCard .productTitle{
+        padding: 0 5px;
+        font-size: inherit;
+    }
+    .horizontalSlider .productCard .productPrice{
+        font-size: inherit;
+    }
+}
+@media (max-width: 480px)and (min-width: 321px) {
+    .horizontalSlider h1{
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+    .horizontalSlider .productCard a{
+        width: 150px;
+        height: 180px;
+    }
+    .horizontalSlider .productCard .productImage{
+        width: 100%;
+        height: 120px;
+    }
+    .horizontalSlider .productCard .productTitle{
+        padding: 0 5px;
+        font-weight: 500;
+        font-size: 10px;
+    }
+    .horizontalSlider .productCard .productPrice{
+        font-size: 9px;
+    }
+}
+@media (max-width: 320px) {
+    .horizontalSlider h1{
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+    .horizontalSlider .productCard a{
+        width: 130px;
+        height: 150px;
+    }
+     .horizontalSlider .productCard .productImage{
+        width: 100%;
+        height: 100px;
+    }
+    .horizontalSlider .productCard .productTitle{
+        font-size: 10px;
+    }
+    .horizontalSlider .productCard .productPrice{
+        font-size: 9px;
+    }
+    
+}

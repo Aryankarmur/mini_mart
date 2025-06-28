@@ -1,0 +1,114 @@
+.about-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.about-container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #007b5e;
+}
+
+.about-container h2 {
+  font-size: 24px;
+  margin-top: 30px;
+  color: #333;
+}
+
+.about-container p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.about-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.about-container li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.thank-you {
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #007b5e;
+}
+
+/* ✅ Responsive Design - works for widths down to 300px */
+@media screen and (max-width: 768px) {
+  .about-container {
+    padding: 30px 15px;
+  }
+
+  .about-container h1 {
+    font-size: 28px;
+  }
+
+  .about-container h2 {
+    font-size: 20px;
+  }
+
+  .about-container p,
+  .about-container li {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-container {
+    padding: 25px 12px;
+  }
+
+  .about-container h1 {
+    font-size: 24px;
+  }
+
+  .about-container h2 {
+    font-size: 18px;
+  }
+
+  .about-container p,
+  .about-container li {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .about-container {
+    padding: 20px 10px;
+  }
+
+  .about-container h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .about-container h2 {
+    font-size: 16px;
+  }
+
+  .about-container p,
+  .about-container li {
+    font-size: 13px;
+  }
+
+  .about-container ul {
+    padding-left: 16px;
+  }
+
+  .thank-you {
+    font-size: 14px;
+    text-align: center;
+  }
+}
