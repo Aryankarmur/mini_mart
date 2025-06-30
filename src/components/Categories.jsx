@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-import "../assets/css/Categories.css";
-
-const Categories = () => {
-  return (
-      <div className="categories-container">
-          <h2>Categories</h2>
-          <figure className="categories">
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-              <img src="src\assets\images\miniflowers.jpg" alt=""/>
-      </figure>
-    </div>
-  )
-}
-
-export default Categories
-=======
 import { useEffect, useState } from "react";
 import "../css/Categories.css";
 // import category images
@@ -134,4 +105,3 @@ const Categories = () => {
 };
 
 export default Categories;
->>>>>>> a6c1ffcf728e3ad77688f1544bdde548c184c40b
