@@ -4,73 +4,73 @@ import { IoMenu } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import logo from "../assets/images/logo.jpg";
 import "../css/Navbar.css";
-import { useEffect, useRef, useState } from "react";
-import { Link, Links } from "react-router-dom";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { fetchProducts } from "./FetchItem";
 
 const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
   const [query, setQuery] = useState("");
   const list = useRef(null);
+  const navigate = useNavigate();
+  const [allProducts, setAllProducts] = useState([]);
 
-  const [Allproducts, setAllproducts] = useState([]);
-
-
-  // get fetch products by category from fetch.js
   useEffect(() => {
-    const fetchsearchedproduct = async () => {
-      const getProductById = await fetchProducts();
-      setAllproducts(getProductById);
+    const fetchSearchedProduct = async () => {
+      const products = await fetchProducts();
+      setAllProducts(products);
     };
-    fetchsearchedproduct();
-  }, [query]);
+
+    fetchSearchedProduct();
+  }, []);
 
   const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
   const handleMenu = () => {
-    setShowMenu(!showMenu);
-    if (showMenu) {
-      list.current.classList.remove("hide");
-      list.current.classList.add("show");
-    } else {
-      list.current.classList.remove("show");
-      list.current.classList.add("hide");
-    }
+    setShowMenu((prev) => !prev);
   };
 
-  const handelsearch = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
-    <Link to={query.trim() === "" ? "/" : `/Search/${query.toLocaleLowerCase()}`} />
+    if (query.trim() === "") {
+      navigate("/");
+      return;
+    }
+    navigate(`/Search/${query.toLocaleLowerCase().trim()}`);
     setQuery("");
-    
   };
 
+  const searchResults = useMemo(() => {
+    const normalizedQuery = query.toLowerCase().trim();
+    if (!normalizedQuery) return [];
 
-  
-  const displaySuggetion = () => {
-      if (query.trim() !== "") {
-        const Searchedproduct = Allproducts.filter((product) =>
-          product.title.toLowerCase().includes(query) || product.tags.includes(query)
+    return allProducts.filter((product) => {
+      const titleMatch = product.title?.toLowerCase().includes(normalizedQuery);
+      const tags = Array.isArray(product.tags) ? product.tags : [];
+      const tagMatch = tags.some((tag) =>
+        tag.toLowerCase().includes(normalizedQuery),
       );
-      const suggetion = Searchedproduct.map((product, index) => {
-        return (
-          <>
-          <li key={product.id}> {product.tags[1] || product.title} </li>
-          <li key={index}> { product.title} </li>
-          </>
-        )
-      })
-        
-      if (query) {
-        return suggetion;
-      } 
+      return titleMatch || tagMatch;
+    });
+  }, [query, allProducts]);
+
+  const showSuggestions = query.trim() !== "" && searchResults.length > 0;
+
+  const displaySuggestion = () => {
+    return searchResults
+      .slice(0, 5)
+      .map((product) => (
+        <li key={product.id}>
+          {(Array.isArray(product.tags) && product.tags[1]) || product.title}
+        </li>
+      ));
+  };
+
+  const handleSearchSuggestion = (e) => {
+    if (e.target.tagName === "LI") {
+      setQuery(e.target.innerText);
     }
-  }
-
-
-  const handelsearchsuggestion = (e) => {
-    setQuery(e.target.innerText);    
-  }
+  };
 
   return (
     <nav>
@@ -81,29 +81,25 @@ const Navbar = () => {
         <h1>Mini mart</h1>
       </div>
       <div className="search-bar">
-        <form onSubmit={handelsearch}>
+        <form onSubmit={handleSearch}>
           <input
             type="search"
             name="search"
             value={query}
             placeholder="Search Products"
             onChange={(e) => setQuery(e.target.value)}
-            required
           />
-          
-          <Link to={query.trim() === ""?"/":`/Search/${query.toLocaleLowerCase()}`}> 
           <button type="submit">
             <IoSearch />
           </button>
-         </Link>
-          
-
-          <ul onClick={handelsearchsuggestion} className={`suggetionList ${query.trim()===""?"hide":"show"} `}>
-            {displaySuggetion()}
+          <ul
+            onClick={handleSearchSuggestion}
+            className={`suggestionList ${showSuggestions ? "show" : "hide"}`}
+          >
+            {showSuggestions && displaySuggestion()}
           </ul>
         </form>
       </div>
-  
       <div className="login_profile-cart">
         <Link to={loggedInUser ? "/Profile" : "/Login"}>
           <button className="login-btn">
@@ -111,7 +107,7 @@ const Navbar = () => {
           </button>
         </Link>
         <Link to={loggedInUser ? "/orders" : "/signIn"}>
-          {loggedInUser ? <button>Orders</button> : <button>Sign in</button>}
+          <button>{loggedInUser ? "Orders" : "Sign in"}</button>
         </Link>
         <Link to="/Cart">
           <button className="cart-btn">
@@ -119,35 +115,30 @@ const Navbar = () => {
           </button>
         </Link>
       </div>
-
-      {/* responsive part */}
       <div className="resp-part">
         <button className="menu-btn" onClick={handleMenu}>
-          {!showMenu ? <IoMdClose /> : <IoMenu />}
+          {!showMenu ? <IoMenu /> : <IoMdClose />}
         </button>
-        <ul className="menu-list hide" ref={list}>
+        <ul className={`menu-list ${showMenu ? "show" : "hide"}`} ref={list}>
           <li>
-             <form onSubmit={handelsearch}>
-          <input
-            type="search"
-            name="search"
-            value={query}
-            placeholder="Search Products"
-            onChange={(e) => setQuery(e.target.value)}
-            required
-          />
-          
-          <Link to={query.trim() === ""?"/":`/Search/${query.toLocaleLowerCase()}`}>
-          <button type="submit">
-            <IoSearch />
-          </button>
-        </Link>
-          
-
-          <ul onClick={handelsearchsuggestion} className={`suggetionList ${query.trim()===""?"hide":"show"} `}>
-            {displaySuggetion()}
-          </ul>
-        </form>
+            <form onSubmit={handleSearch}>
+              <input
+                type="search"
+                name="search"
+                value={query}
+                placeholder="Search Products"
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              <button type="submit">
+                <IoSearch />
+              </button>
+              <ul
+                onClick={handleSearchSuggestion}
+                className={`suggestionList ${showSuggestions ? "show" : "hide"}`}
+              >
+                {showSuggestions && displaySuggestion()}
+              </ul>
+            </form>
           </li>
           <Link to="/About" className="login-btn">
             <li>About</li>
@@ -159,7 +150,7 @@ const Navbar = () => {
             <li>{loggedInUser ? "Profile" : "Login"}</li>
           </Link>
           <Link to={loggedInUser ? "/orders" : "/signIn"}>
-            {loggedInUser ? <li>Orders</li> : <li>Sign in</li>}
+            <li>{loggedInUser ? "Orders" : "Sign in"}</li>
           </Link>
           <Link to="/Cart">
             <li>

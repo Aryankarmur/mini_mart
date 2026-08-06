@@ -1,20 +1,20 @@
+import { Suspense, lazy } from "react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
-import Cart from "./pages/Cart";
-import Product_details from "./pages/Product_details";
-import Login from "./pages/Login";
-import Categorie_search from "./pages/Categorie_search";
-
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Home = lazy(() => import("./pages/Home"));
+const Cart = lazy(() => import("./pages/Cart"));
+const Product_details = lazy(() => import("./pages/Product_details"));
+const Login = lazy(() => import("./pages/Login"));
+const Categorie_search = lazy(() => import("./pages/Categorie_search"));
+const Sign_up = lazy(() => import("./pages/Sign_up"));
+const Profile = lazy(() => import("./pages/Profile"));
+const Address = lazy(() => import("./pages/Address"));
+const Payment = lazy(() => import("./pages/Payment"));
+const Orders = lazy(() => import("./pages/Orders"));
+const Search = lazy(() => import("./pages/Search"));
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sign_up from "./pages/Sign_up";
-import Profile from "./pages/Profile";
-import Address from "./pages/Address";
-import Payment from "./pages/Payment";
-import Orders from "./pages/Orders";
-import Search from "./pages/Search";
 
 function App() {
   return (
@@ -23,22 +23,26 @@ function App() {
         <Navbar />
       </header>
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Categorie_search/:slug" element={<Categorie_search />} />
-          <Route path="/Search/:query" element={<Search />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Product_details/:id" element={<Product_details />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/userdetail" element={<Address/>} />
-          <Route path="/payment" element={<Payment/>} />
-          <Route path="/orders" element={<Orders/>} />
-          <Route path="/Login" element={<Login/>} />
-          <Route path="/SignIn" element={<Sign_up />} />
-          <Route path="/Profile" element={<Profile />} />
-
-        </Routes>
+        <Suspense fallback={<div className="route-loader">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/Categorie_search/:slug"
+              element={<Categorie_search />}
+            />
+            <Route path="/Search/:query" element={<Search />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/Product_details/:id" element={<Product_details />} />
+            <Route path="/Cart" element={<Cart />} />
+            <Route path="/userdetail" element={<Address />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/SignIn" element={<Sign_up />} />
+            <Route path="/Profile" element={<Profile />} />
+          </Routes>
+        </Suspense>
       </main>
       <footer>
         <Footer />

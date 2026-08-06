@@ -28,8 +28,33 @@ import Womens_Watches from "/src/assets/images/categories image/elegant-white-wr
 import { Link } from "react-router-dom";
 
 const Categories = () => {
-  const [category, setCategory] = useState([]);
-  // category images array
+  const defaultCategoryNames = [
+    "beauty",
+    "fragrances",
+    "furniture",
+    "groceries",
+    "home-decoration",
+    "kitchen-accessories",
+    "laptops",
+    "mens-shirts",
+    "mens-shoes",
+    "mens-watches",
+    "mobile-accessories",
+    "motorcycle",
+    "skin-care",
+    "smartphones",
+    "sports-accessories",
+    "sunglasses",
+    "tablets",
+    "tops",
+    "vehicle",
+    "womens-bags",
+    "womens-dresses",
+    "womens-jewellery",
+    "womens-shoes",
+    "womens-watches",
+  ];
+
   const imgPath = [
     beauty,
     Fragrances,
@@ -57,26 +82,38 @@ const Categories = () => {
     Womens_Watches,
   ];
 
+  const defaultCategoryData = defaultCategoryNames.map((name, index) => ({
+    name,
+    slug: name,
+    img: imgPath[index],
+  }));
+
+  const [category, setCategory] = useState(defaultCategoryData);
+
   // Fetch categories from the API
   useEffect(() => {
     const fetchCategories = async () => {
-      const res = await fetch("https://dummyjson.com/products/categories");
-      const data = await res.json();
-      const catArray = data.map((category, index) => ({
-        ...category,
-        img: imgPath[index],
-      }));
-      setCategory(catArray);
+      try {
+        const res = await fetch("https://dummyjson.com/products/categories");
+        const data = await res.json();
+        const catArray = data.map((category, index) => ({
+          name: category,
+          slug: category.toLowerCase().replace(/\s+/g, "-"),
+          img: imgPath[index] || imgPath[0],
+        }));
+        setCategory(catArray);
+      } catch (error) {
+        setCategory(defaultCategoryData);
+      }
     };
     fetchCategories();
   }, []);
-
 
   // category classification
   const categoryList = category.map((category) => {
     return (
       <li key={category.name}>
-          <Link to={`Categorie_search/${category.slug}`} className="under">
+        <Link to={`Categorie_search/${category.slug}`} className="under">
           <div>
             <>
               <div className="cat_images">
@@ -92,8 +129,8 @@ const Categories = () => {
               </>
             </>
           </div>
-      </Link>
-        </li>
+        </Link>
+      </li>
     );
   });
 

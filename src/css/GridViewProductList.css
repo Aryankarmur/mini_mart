@@ -1,69 +1,74 @@
-
-.gridviewProductList h2{
-    color: #333;
-    font-size: 24px;
-    font-weight: 600;
-    padding: 10px ;
-    margin-bottom: 16px;
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
+.gridviewProductList h2 {
+  color: #2a4759;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem 1rem 0.75rem;
+  margin: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e4ea;
 }
 
 .gridviewProductList .gridviewProductList__products {
-     padding:  0 16px;
+  padding: 1rem;
   display: grid;
-  place-items: center;
-  grid-template-columns:repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
 .gridviewProductList .gridviewProductList__products a {
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 16px;
-    color: inherit;
-    background-color: #fff;
-    font: inherit;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+  text-decoration: none;
+  width: 100%;
+  min-height: 100%;
+  color: inherit;
+  background-color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .gridviewProductList .gridviewProductList__products a:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
-    transition: all 0.3s ease;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
 }
-.gridviewProductList .gridviewProductList__products a .productImage{
-width: 100%;
-height: 200px;
+.gridviewProductList .gridviewProductList__products a .productImage {
+  width: 100%;
+  height: 12rem;
 }
-.gridviewProductList .gridviewProductList__products a .productImage img{
-width: 100%;    
-height: 100%;
-object-fit: contain;
+.gridviewProductList .gridviewProductList__products a .productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-.gridviewProductList .gridviewProductList__products a .productTitle{
-    padding: 2px;
+.gridviewProductList .gridviewProductList__products a .productTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2a4759;
+  margin: 0;
 }
-@media (max-width: 768px) {
-    .gridviewProductList .gridviewProductList__products {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
+.gridviewProductList .gridviewProductList__products a .productPrice {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #565656;
+  margin: 0;
 }
-@media (max-width: 480px) {
-    .gridviewProductList .gridviewProductList__products a .productImage{
-        width: 100%;
-        height: 100px;
-    }
- .gridviewProductList .gridviewProductList__products a {
-    height: 200px;
- }
+@media (max-width: 1024px) {
+  .gridviewProductList .gridviewProductList__products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .gridviewProductList .gridviewProductList__products {
+    grid-template-columns: 1fr;
+  }
+  .gridviewProductList .gridviewProductList__products a .productImage {
+    height: 10rem;
+  }
 }
