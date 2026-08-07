@@ -1,8 +1,8 @@
 import "/src/assets/css/Paymentdetailes.css"
 import { useState } from "react";
 import visa from "../assets/images/debit card/visa.jpg";
-import masterCard from "../assets/images/debit card/mastercard.jpg";
-import amex from "../assets/images/debit card/amex.jpg";
+import masterCard from "/src/assets/images/debit card/mastercard.jpg";
+import amex from "/src/assets/images/debit card/amex.jpg";
 
 const PaymentDetailes = () => {
   const [data, setData] = useState("");
