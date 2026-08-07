@@ -1,5 +1,8 @@
 import "/src/assets/css/Paymentdetailes.css"
 import { useState } from "react";
+import visa from "../assets/images/debit card/visa.jpg";
+import masterCard from "../assets/images/debit card/mastercard.jpg";
+import amex from "../assets/images/debit card/amex.jpg";
 
 const PaymentDetailes = () => {
   const [data, setData] = useState("");
@@ -29,9 +32,9 @@ const PaymentDetailes = () => {
               <input type="month" name="exp-date" id="exp-date" />
             </div>
             <div className="card-img">
-              <img src="src\assets\images\debit card\visa.jpg" alt="" />
-              <img src="src\assets\images\debit card\mastercard.jpg" alt="" />
-              <img src="src\assets\images\debit card\amex.jpg" alt="" />
+              <img src={visa} alt="Visa image" />
+              <img src={masterCard} alt="Master card Image" />
+              <img src={amex} alt="Amex image" />
             </div>
           </div>
         </div>
@@ -58,9 +61,9 @@ const PaymentDetailes = () => {
               <input type="month" name="exp-date" id="exp-date" />
             </div>
             <div className="card-img">
-              <img src="src\assets\images\debit card\visa.jpg" alt="visa card image" />
-              <img src="src\assets\images\debit card\mastercard.jpg" alt=" master card image" />
-              <img src="src\assets\images\debit card\amex.jpg" alt=" amex card image" />
+              <img src={visa} alt="visa card image" />
+              <img src={masterCard} alt=" master card image" />
+              <img src={amex} alt=" amex card image" />
             </div>
           </div>
         </div>
