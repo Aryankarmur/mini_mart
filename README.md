@@ -14,18 +14,6 @@ This project was built as a practical frontend project to strengthen my skills i
 
 ---
 
-## 📸 Preview
-
-_Add a real screenshot of the application here._
-
-Example:
-
-![Mini Mart Preview](./public/preview.png)
-
-> Use an actual screenshot from the project. Replace the path above if your screenshot is stored somewhere else.
-
----
-
 ## 📌 About the Project
 
 Mini Mart is a React-based e-commerce application designed to simulate a modern online shopping experience.
