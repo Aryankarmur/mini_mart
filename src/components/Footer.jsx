@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <div className="devloper-detail">
+        {/* <div className="devloper-detail">
           <p>Developed by : </p>
           <div className="developer">
             <div className="developer-img">
@@ -49,7 +49,7 @@ const Footer = () => {
               <span className="dev-name">Aryan Karmur</span>
             </div>
           </div>
-        </div>
+        </div> */}
         <p className="rights_p"> &copy; 2025 Mini Mart. All rights reserved.</p>
       </div>
     </div>
